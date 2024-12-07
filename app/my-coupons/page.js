@@ -83,19 +83,19 @@ export default function CouponPage() {
   };
 
   return (
-    <div className="container mx-auto p-4 rtl">
+    <div className="container mx-auto rtl">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
+      <nav className="flex items-center gap-2 mb-8 text-sm text-muted-foreground">
         <a href="/" className="hover:text-primary">
           الصفحة الرئيسية
         </a>
-        <ChevronLeft className="h-4 w-4" />
+        <ChevronLeft className="w-4 h-4" />
         <span className="text-foreground">كوبونات خاصة بي</span>
       </nav>
 
-      <h1 className="text-2xl font-bold mb-8">كوبونات خاصة بي</h1>
+      <h1 className="mb-8 text-2xl font-bold">كوبونات خاصة بي</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {coupons.map((coupon) => (
           <Card key={coupon.id} className="overflow-hidden">
             <CardContent className="p-6">
@@ -110,7 +110,7 @@ export default function CouponPage() {
                     </span>
                     <span className="text-muted-foreground">كوبون تخفيض</span>
                   </div>
-                  <div className="flex items-center gap-1 text-sm text-muted-foreground mb-4">
+                  <div className="flex items-center gap-1 mb-4 text-sm text-muted-foreground">
                     <span>صالح حتى:</span>
                     <span className={coupon.isExpired ? "text-red-500" : ""}>
                       {coupon.expiryDate}
@@ -125,12 +125,12 @@ export default function CouponPage() {
                     >
                       {copiedCodes.includes(coupon.code) ? (
                         <>
-                          <Check className="mr-2 h-4 w-4" />
+                          <Check className="w-4 h-4 mr-2" />
                           تم النسخ
                         </>
                       ) : (
                         <>
-                          <Copy className="mr-2 h-4 w-4" />
+                          <Copy className="w-4 h-4 mr-2" />
                           {coupon.code}
                         </>
                       )}

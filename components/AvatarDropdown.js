@@ -15,6 +15,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
+import Link from "next/link";
 
 const DropdownMenu = DropdownMenuPrimitive.Root;
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
@@ -35,7 +36,7 @@ export default function AvatarDropdown() {
         <button
           onClick={handleToggle}
           s
-          className="flex items-center gap-4  cursor-pointer text-sm font-medium text-gray-900 rounded-full dark:hover:text-blue-500"
+          className="flex items-center gap-4 text-sm font-medium text-gray-900 rounded-full cursor-pointer dark:hover:text-blue-500"
         >
           {/* Avatar and Name */}
           <Avatar className="w-7 h-7">
@@ -54,49 +55,57 @@ export default function AvatarDropdown() {
 
       <DropdownMenuContent className="w-56 bg-white border  rounded-sm z-[100]">
         <DropdownMenuItem className="hover:border-none" asChild>
-          <Button variant="ghost" className="w-full justify-end">
+          <Button variant="ghost" className="justify-end w-full">
             <span>الصفحة الشخصية</span>
-            <User strokeWidth="1" className="mr-2 h-4 w-4" />
+            <User strokeWidth="1" className="w-4 h-4 mr-2" />
           </Button>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Button variant="ghost" className="w-full justify-end">
-            <span>المحفظة</span>
-            <Wallet strokeWidth="1" className="mr-2 h-4 w-4" />
-          </Button>
+          <Link href="/wallet">
+            <Button variant="ghost" className="justify-end w-full">
+              <span>المحفظة</span>
+              <Wallet strokeWidth="1" className="w-4 h-4 mr-2" />
+            </Button>
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Button variant="ghost" className="w-full justify-end">
-            <span>الطلبات</span>
-            <ShoppingBag strokeWidth="1" className="mr-2 h-4 w-4" />
-          </Button>
-        </DropdownMenuItem>
-
-        <DropdownMenuItem asChild>
-          <Button variant="ghost" className="w-full justify-end">
-            <span>كوبونات خاصة بي</span>
-            <Receipt strokeWidth="1" className="mr-2 h-4 w-4" />
-          </Button>
+          <Link href="/orders">
+            <Button variant="ghost" className="justify-end w-full">
+              <span>الطلبات</span>
+              <ShoppingBag strokeWidth="1" className="w-4 h-4 mr-2" />
+            </Button>
+          </Link>
         </DropdownMenuItem>
 
         <DropdownMenuItem asChild>
-          <Button variant="ghost" className="w-full justify-end">
+          <Link href="/my-coupons">
+            <Button variant="ghost" className="justify-end w-full">
+              <span>كوبونات خاصة بي</span>
+              <Receipt strokeWidth="1" className="w-4 h-4 mr-2" />
+            </Button>
+          </Link>
+        </DropdownMenuItem>
+
+        <DropdownMenuItem asChild>
+          <Button variant="ghost" className="justify-end w-full">
             <span>الرسائل</span>
-            <Mail strokeWidth="1" className="mr-2 h-4 w-4" />
+            <Mail strokeWidth="1" className="w-4 h-4 mr-2" />
           </Button>
         </DropdownMenuItem>
 
         <DropdownMenuItem asChild>
-          <Button variant="ghost" className="w-full justify-end">
-            <span>إعدادات الملف الشخصي</span>
-            <Settings strokeWidth="1" className="mr-2 h-4 w-4" />
-          </Button>
+          <Link href="/settings">
+            <Button variant="ghost" className="justify-end w-full">
+              <span>إعدادات الملف الشخصي</span>
+              <Settings strokeWidth="1" className="w-4 h-4 mr-2" />
+            </Button>
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator className="border" />
         <DropdownMenuItem asChild>
-          <Button variant="ghost" className="w-full justify-end">
+          <Button variant="ghost" className="justify-end w-full">
             <span>تسجيل خروج</span>
-            <LogOut strokeWidth="1" className="mr-2 h-4 w-4" />
+            <LogOut strokeWidth="1" className="w-4 h-4 mr-2" />
           </Button>
         </DropdownMenuItem>
       </DropdownMenuContent>

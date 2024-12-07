@@ -5,6 +5,10 @@ const nextConfig = {
     defaultLocale: "ar",
     localeDetection: false,
   },
+
+  images: {
+    domains: ["images.unsplash.com"],
+  },
 };
 
 export default nextConfig;

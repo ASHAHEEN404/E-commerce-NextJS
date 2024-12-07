@@ -35,20 +35,20 @@
 //                 إبدا البيع الأن
 //               </Link>
 //             </Button>
-//             <div className="flex justify-center items-center text-center w-full mt-4">
+//             <div className="flex items-center justify-center w-full mt-4 text-center">
 //               <Tabs defaultValue="main" className="w-[800px] text-[1rem]">
 //                 <TabsList>
 //                   <TabsTrigger value="categories">فئات</TabsTrigger>
 //                   <TabsTrigger value="main">القائمة الرئيسية</TabsTrigger>
 //                 </TabsList>
 //                 <TabsContent value="main">
-//                   <div className="mt-5 flex flex-col">
+//                   <div className="flex flex-col mt-5">
 //                     {/* AvatarDropdown Component */}
 //                     <div className="flex justify-end mb-4">
 //                       <AvatarDropdown onClick={handleAvatarDropdownClick} />
 //                     </div>
 //                     {/* Dynamic List */}
-//                     <ul className="list-disc pl-5">
+//                     <ul className="pl-5 list-disc">
 //                       {items.map((item, index) => (
 //                         <li
 //                           key={index}
@@ -121,7 +121,7 @@ const Drawer = () => {
       {/* Hamburger Button */}
       <div className="text-center">
         <button
-          className="text-black rounded-lg text-sm focus:outline-none"
+          className="text-sm text-black rounded-lg focus:outline-none"
           onClick={toggleDrawer}
         >
           <svg
@@ -144,7 +144,7 @@ const Drawer = () => {
       {/* Overlay */}
       {isDrawerOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-20"
+          className="fixed inset-0 z-20 bg-black bg-opacity-50"
           onClick={closeDrawer} // Close drawer when overlay is clicked
         ></div>
       )}
@@ -198,7 +198,7 @@ const Drawer = () => {
             <li>
               <button
                 type="button"
-                className="flex justify-between items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                className="flex items-center justify-between w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                 onClick={toggleDropdown}
               >
                 {/* Left side: Avatar and Name */}
@@ -232,10 +232,10 @@ const Drawer = () => {
 
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <ul className="py-2 px-2 space-y-2">
+                <ul className="px-2 py-2 space-y-2">
                   <li>
-                    <div className="flex  items-center hover:bg-gray-100 ">
-                      <User strokeWidth="1" className="mr-2 h-6 w-6" />
+                    <div className="flex items-center hover:bg-gray-100 ">
+                      <User strokeWidth="1" className="w-6 h-6 mr-2" />
                       <Link
                         href="#"
                         onClick={closeDrawer}
@@ -246,8 +246,8 @@ const Drawer = () => {
                     </div>
                   </li>
                   <li>
-                    <div className="flex  items-center hover:bg-gray-100 ">
-                      <Wallet strokeWidth="1" className="mr-2 h-6 w-6" />
+                    <div className="flex items-center hover:bg-gray-100 ">
+                      <Wallet strokeWidth="1" className="w-6 h-6 mr-2" />
                       <Link
                         href="#"
                         className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group dark:text-white dark:hover:bg-gray-700"
@@ -258,7 +258,7 @@ const Drawer = () => {
                   </li>
                   <li>
                     <div className="flex items-center hover:bg-gray-100 ">
-                      <ShoppingBag strokeWidth="1" className="mr-2 h-6 w-6" />
+                      <ShoppingBag strokeWidth="1" className="w-6 h-6 mr-2" />
                       <Link
                         href="#"
                         className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group dark:text-white dark:hover:bg-gray-700"
@@ -270,7 +270,7 @@ const Drawer = () => {
 
                   <li>
                     <div className="flex items-center hover:bg-gray-100 ">
-                      <Receipt strokeWidth="1" className="mr-2 h-6 w-6" />
+                      <Receipt strokeWidth="1" className="w-6 h-6 mr-2" />
                       <Link
                         href="#"
                         className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group dark:text-white dark:hover:bg-gray-700"
@@ -282,7 +282,7 @@ const Drawer = () => {
 
                   <li>
                     <div className="flex items-center hover:bg-gray-100 ">
-                      <Mail strokeWidth="1" className="mr-2 h-6 w-6" />
+                      <Mail strokeWidth="1" className="w-6 h-6 mr-2" />
                       <Link
                         href="#"
                         className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group dark:text-white dark:hover:bg-gray-700"
@@ -294,9 +294,9 @@ const Drawer = () => {
 
                   <li>
                     <div className="flex items-center hover:bg-gray-100 ">
-                      <Settings strokeWidth="1" className="mr-2 h-6 w-6" />
+                      <Settings strokeWidth="1" className="w-6 h-6 mr-2" />
                       <Link
-                        href="#"
+                        href="/settings"
                         className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group dark:text-white dark:hover:bg-gray-700"
                       >
                         إعدادات الملف الشخصي
@@ -306,7 +306,7 @@ const Drawer = () => {
 
                   <li>
                     <div className="flex items-center hover:bg-gray-100 ">
-                      <LogOut strokeWidth="1" className="mr-2 h-6 w-6" />
+                      <LogOut strokeWidth="1" className="w-6 h-6 mr-2" />
                       <Link
                         href="#"
                         className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group dark:text-white dark:hover:bg-gray-700"
@@ -321,7 +321,7 @@ const Drawer = () => {
 
             <li className="px-2">
               <div className="flex items-center hover:bg-gray-100 ">
-                <BookOpen strokeWidth="1" className="mr-2 h-6 w-6" />
+                <BookOpen strokeWidth="1" className="w-6 h-6 mr-2" />
                 <Link
                   href="/"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group dark:text-white dark:hover:bg-gray-700"
@@ -333,7 +333,7 @@ const Drawer = () => {
 
             <li className="px-2">
               <div className="flex items-center hover:bg-gray-100 ">
-                <Heart strokeWidth="1" className="mr-2 h-6 w-6" />
+                <Heart strokeWidth="1" className="w-6 h-6 mr-2" />
                 <Link
                   href="/favorites"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group dark:text-white dark:hover:bg-gray-700"
@@ -345,7 +345,7 @@ const Drawer = () => {
 
             <li className="px-2">
               <div className="flex items-center hover:bg-gray-100 ">
-                <MapPin strokeWidth="1" className="mr-2 h-6 w-6" />
+                <MapPin strokeWidth="1" className="w-6 h-6 mr-2" />
                 <Link
                   href="/"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group dark:text-white dark:hover:bg-gray-700"
@@ -357,11 +357,11 @@ const Drawer = () => {
 
             <li className="px-2">
               <div className="mt-4">
-                <div className="flex gap-3  items-center">
-                  <Banknote strokeWidth="1" className="mr-2 h-6 w-6" />
+                <div className="flex items-center gap-3">
+                  <Banknote strokeWidth="1" className="w-6 h-6 mr-2" />
                   <label
                     htmlFor="currency"
-                    className="block text-md font-medium text-gray-700 dark:text-gray-300"
+                    className="block font-medium text-gray-700 text-md dark:text-gray-300"
                   >
                     العملة
                   </label>
@@ -370,7 +370,7 @@ const Drawer = () => {
                   id="currency"
                   value={currency}
                   onChange={handleCurrencyChange}
-                  className="mt-2 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
+                  className="block w-full px-3 py-2 mt-2 bg-white border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
                 >
                   <option value="Euro">Euro</option>
                   <option value="Dollar">Dollar</option>

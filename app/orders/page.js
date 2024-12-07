@@ -70,8 +70,8 @@ const orders = [
 
 export default function OrdersPage() {
   return (
-    <div className="container mx-auto p-4 lg:p-6" dir="rtl">
-      <div className="flex items-center mb-4 mt-4">
+    <div className="container p-4 mx-auto lg:p-6" dir="rtl">
+      <div className="flex items-center mt-4 mb-4">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -84,46 +84,46 @@ export default function OrdersPage() {
           </BreadcrumbList>
         </Breadcrumb>
       </div>
-      <div className="flex flex-col lg:flex-row gap-6">
+      <div className="flex flex-col gap-6 lg:flex-row">
         <div className="flex flex-col gap-4">
           <h1 className="text-2xl font-medium">طلبات خدمات مخصصة</h1>
-          <nav className="lg:w-64 space-y-2 lg:min-h-screen">
-            <Card className="lg:h-screen shadow-none border-none">
+          <nav className="space-y-2 lg:w-64 lg:min-h-screen">
+            <Card className="border-none shadow-none lg:h-screen">
               <CardContent className="p-4">
                 <ul className="space-y-6">
                   <li>
                     <Link
                       href="/"
-                      className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+                      className="flex items-center gap-2 text-sm transition-colors hover:text-primary"
                     >
-                      <Home className="h-4 w-4" />
+                      <Home className="w-4 h-4" />
                       <span className="">الصفحة الرئيسية</span>
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/orders"
-                      className="flex items-center gap-2 text-sm text-primary font-medium"
+                      className="flex items-center gap-2 text-sm font-medium text-primary"
                     >
-                      <ShoppingBag className="h-4 w-4" />
+                      <ShoppingBag className="w-4 h-4" />
                       <span className="">الطلبات</span>
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/orders/downloads"
-                      className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+                      className="flex items-center gap-2 text-sm transition-colors hover:text-primary"
                     >
-                      <FileText className="h-4 w-4" />
+                      <FileText className="w-4 h-4" />
                       <span className="">التحميلات</span>
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/orders/refund-requests"
-                      className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+                      className="flex items-center gap-2 text-sm transition-colors hover:text-primary"
                     >
-                      <ArrowLeftRight className="h-4 w-4" />
+                      <ArrowLeftRight className="w-4 h-4" />
                       <span className="">طلبات الإرجاع</span>
                     </Link>
                   </li>
@@ -134,12 +134,12 @@ export default function OrdersPage() {
         </div>
 
         <main className="flex-1 space-y-6">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <Link href="/orders">
-              <Card className="bg-muted/70 transition-colors cursor-pointer">
+              <Card className="transition-colors cursor-pointer bg-muted/70">
                 <CardContent className="flex items-center gap-4 p-4">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <ShoppingBag className="h-6 w-6 text-primary" />
+                  <div className="p-3 rounded-lg bg-primary/10">
+                    <ShoppingBag className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <p className="font-medium">الطلبات</p>
@@ -152,10 +152,10 @@ export default function OrdersPage() {
             </Link>
 
             <Link href="/orders/downloads">
-              <Card className="hover:bg-muted/50 transition-colors cursor-pointer">
+              <Card className="transition-colors cursor-pointer hover:bg-muted/50">
                 <CardContent className="flex items-center gap-4 p-4">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <Download className="h-6 w-6 text-primary" />
+                  <div className="p-3 rounded-lg bg-primary/10">
+                    <Download className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <p className="font-medium">التحميلات</p>
@@ -165,17 +165,19 @@ export default function OrdersPage() {
               </Card>
             </Link>
 
-            <Card className="hover:bg-muted/50 transition-colors cursor-pointer">
-              <CardContent className="flex items-center gap-4 p-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <RotateCcw className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <p className="font-medium">طلبات الإرجاع</p>
-                  <p className="text-sm text-muted-foreground">1 طلب</p>
-                </div>
-              </CardContent>
-            </Card>
+            <Link href="/orders/refund-requests">
+              <Card className="transition-colors cursor-pointer hover:bg-muted/50">
+                <CardContent className="flex items-center gap-4 p-4">
+                  <div className="p-3 rounded-lg bg-primary/10">
+                    <RotateCcw className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-medium">طلبات الإرجاع</p>
+                    <p className="text-sm text-muted-foreground">1 طلب</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
 
           <Card>

@@ -12,6 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 
 export function CurrencyChangerDropdown() {
   const [currency, setCurrency] = React.useState("USD");
@@ -20,7 +21,15 @@ export function CurrencyChangerDropdown() {
     <div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline">العملة: {currency}</Button>
+          <div className="flex items-center">
+            <Button
+              className="bg-transparent border-none rounded-none shadow-none outline-none hover:bg-transparent "
+              variant="outline"
+            >
+              العملة: {currency}
+            </Button>
+            <ChevronDown size={15} />
+          </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56">
           <DropdownMenuLabel className="text-end">

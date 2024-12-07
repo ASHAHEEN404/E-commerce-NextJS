@@ -15,9 +15,9 @@ const Header = () => {
 
   return (
     <>
-      <div className=" hidden lg:block mt-2 mb-2">
+      <div className="hidden mt-2 mb-2 lg:block">
         <div className="container">
-          <div className="flex justify-between items-center">
+          <div className="flex items-center justify-between">
             <div></div>
             <div className="flex items-center gap-4">
               <AvatarDropdown />
@@ -27,12 +27,15 @@ const Header = () => {
         </div>
       </div>
       <hr className="hidden lg:flex lg-mb-2" />
-      <div className="flex justify-between lg:justify-around z-50 items-center px-8 py-4 h-16">
+      <div className="z-50 flex items-center justify-between h-16 px-8 py-4 lg:justify-around">
         <MobileMenu />
-        <Logo />
+
+        <Link href="/">
+          <Logo />
+        </Link>
 
         <div className="flex items-center gap-6">
-          <div className="lg:hidden cursor-pointer">
+          <div className="cursor-pointer lg:hidden">
             <Search strokeWidth="1.5" width={25} height={25} />
           </div>
           {/* CART */}
@@ -50,14 +53,14 @@ const Header = () => {
 
           {/* FAVORITES */}
 
-          <Link href="/favorites" className="lg:flex hidden items-center gap-2">
+          <Link href="/favorites" className="items-center hidden gap-2 lg:flex">
             <span className="hidden lg:block">مفضلتي</span>
             <div className="relative">
               <Heart strokeWidth="1.5" width={25} height={25} />
             </div>
           </Link>
 
-          <Button className="hidden lg:flex rounded-none">
+          <Button className="hidden rounded-none lg:flex">
             إبدا البيع الأن
           </Button>
         </div>

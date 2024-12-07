@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Cairo } from "next/font/google";
+import Footer from "@/components/Footer";
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -17,12 +18,13 @@ export default function RootLayout({ children }) {
   return (
     <html dir="rtl" lang="ar">
       <body
-        className={` ${cairo.className} antialiased flex flex-col min-h-screen`}
+        className={` ${cairo.className} antialiased flex flex-col min-h-screen  `}
       >
         <Header />
         <div className="grid flex-1">
           <main className="w-screen mx-auto ">{children}</main>
         </div>
+        <Footer />
       </body>
     </html>
   );

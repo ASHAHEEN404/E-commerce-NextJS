@@ -38,7 +38,7 @@ const HeroSwiper = () => {
         {/* Controls */}
         <button
           type="button"
-          className="absolute top-1/2 left-3 z-40 w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-300 focus:outline-none transition"
+          className="absolute z-40 w-10 h-10 transition rounded-full top-1/2 left-3 bg-gray-200/50 hover:bg-gray-300 focus:outline-none"
           onClick={() =>
             setCurrentIndex((prevIndex) =>
               prevIndex === 0 ? slides.length - 1 : prevIndex - 1
@@ -62,7 +62,7 @@ const HeroSwiper = () => {
         </button>
         <button
           type="button"
-          className="absolute top-1/2 right-3 z-40 w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-300 focus:outline-none transition"
+          className="absolute z-40 w-10 h-10 transition rounded-full top-1/2 right-3 bg-gray-200/50 hover:bg-gray-300 focus:outline-none"
           onClick={() =>
             setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length)
           }
